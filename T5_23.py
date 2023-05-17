@@ -307,7 +307,7 @@ class Method(Base):
 
         inv_time = self.data["TIME"].max()
         df = pd.DataFrame({
-            "formula": self.list_formula,
+            "formula": [shared_func.convert_array_f_to_str(f) for f in self.list_formula],
             f"{self.__measure}_profit": self.list_history_profit,
             "Threshold": self.list_threshold,
             # "Invested_coms": self.list_inv_coms,

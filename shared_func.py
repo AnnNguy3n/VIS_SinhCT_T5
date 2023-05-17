@@ -20,9 +20,9 @@ def harmean(arr):
     for num in arr:
         if num == 0:
             return 0.0
-        
+
         inv_sum += 1.0/num
-    
+
     return float(n) / inv_sum
 
 
@@ -103,3 +103,18 @@ def get_valid_op(struct, idx, start):
         valid_op[1] = 0
 
     return np.where(valid_op == 1)[0] + 2
+
+
+list_operator = ["+", "-", "*", "/"]
+def convert_array_f_to_str(arr):
+    k = 0
+    text = ""
+    for a in arr:
+        if k % 2 == 0:
+            text += list_operator[a]
+        else:
+            text += str(a)
+        
+        k += 1
+
+    return text
