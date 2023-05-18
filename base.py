@@ -6,7 +6,7 @@ import os
 class Base:
     def __init__(self, data: pd.DataFrame, path: str) -> None:
         # Các cột bắt buộc
-        dropped_cols = ["TIME", "PROFIT", "SYMBOL"]
+        dropped_cols = ["TIME", "PROFIT", "SYMBOL", "ValueARG"]
         for col in dropped_cols:
             if col not in data.columns:
                 raise Exception(f"Thiếu cột {col}")
